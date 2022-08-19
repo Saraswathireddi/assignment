@@ -1,0 +1,152 @@
+2.write a C#program to enter input value as float and output value should be an integer
+
+using System;
+
+namespace convert_float_to_int
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            float f = 10.2f;
+            int i = (int)f;
+            Console.WriteLine("Converted float {0} to int {1}", f, i);
+        }
+    }
+}
+
+3.write a asp.net program to demonstrate IndexOutRange EXCEPTION.
+
+using System;
+
+class ExceptionDemo
+{
+    static void Main(string[] args)
+    {
+        int[] intArray = new int[5] { 50,40,30,20,10 };
+        int iLoop   = 0;
+        int sum     = 0;
+
+        try
+        {
+            for (iLoop = 0; iLoop <= 5; iLoop++)
+            {
+                sum += intArray[iLoop];
+            }
+            Console.WriteLine("Sum of array elements:" + sum);
+        }
+        catch (IndexOutOfRangeException e)
+        {
+            Console.WriteLine(e.Message);
+        }
+    }
+}
+
+
+4.write a c#program to get month name from Month number using switch case
+
+
+
+class Program
+{
+
+static void Main(string[] args)
+{
+int monthNumber;
+Console.Write("Enter Month Number (1 - 12): ");
+monthNumber = Convert.ToInt32(Console.ReadLine());
+
+switch (monthNumber)
+{
+case 1:
+Console.WriteLine("January");
+break;
+case 2:
+Console.WriteLine("February");
+break;
+case 3:
+Console.WriteLine("March");
+break;
+case 4:
+Console.WriteLine("April");
+break;
+case 5:
+Console.WriteLine("May");
+break;
+case 6:
+Console.WriteLine("June");
+break;
+case 7:
+Console.WriteLine("July");
+break;
+case 8:
+Console.WriteLine("August");
+break;
+case 9:
+Console.WriteLine("September");
+break;
+case 10:
+Console.WriteLine("October");
+break;
+case 11:
+Console.WriteLine("November");
+break;
+case 12:
+Console.WriteLine("December");
+break;
+default:
+Console.WriteLine("you did not enter correct value for month name");
+break;
+}
+
+Console.ReadLine();
+}
+}
+
+
+
+1.write a asp.net program to add textbox,button,list box,textbox value should be added to list box by clicking submit button clear textbox
+
+FORM1:
+
+<form name="orderform">
+    Category: 
+ <input type="radio" name="category" id="category" value="0">Apple</input>
+ <input type="radio" name="category" id="category" value="1">Orange</input>
+ <input type="radio" name="category" id="category" value="2">Banana</input>
+ <input type="radio" name="category" id="category" value="3">Guava</input>
+ <br>
+ Item: <input type="text" length="30" name="item" id="item"/>
+ <br>
+ <input type="button" name="add" value="Add to List" onClick="addItem_list()"/>
+ </form>
+
+ <body onload="addItem_list()">
+        <form name="items">
+            Items <SELECT name="item_list" id="item_list">
+                <option value="">Select item</option>
+            </SELECT>
+
+
+JavaScript
+function addItem(selectbox,text,value )
+{
+    var item = document.createElement("OPTION");
+    item.text = text;
+    item.value = value;
+    selectbox.options.add(item);
+}
+
+function addItem_list(){
+    var it=document.orderform.item.value; //getting item value from textbox
+    //To determine which radio button has been selected:
+    for (var i=0; i<document.orderform.category.length; i++)
+    {
+        if (document.orderform.category[i].checked==true)
+        {
+            var y = orderform.category[i].value;
+        }
+    }
+    var val=y+" "+it;
+    addItem(document.items.item_list,val,val);                
+}
